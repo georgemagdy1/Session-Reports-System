@@ -1,5 +1,5 @@
 // Google Apps Script Web App URL - This link should be updated
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx36BnY_Jnrdbrg7Y3og1hhOkE0OUBCfdUgXIdX6xvGt71nR2374aR3DrHDe1YVGfVC1Q/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYIQPdyheN63YUUqSeYgYeawQJ7X1YCQeUQ5R8R3SD5JaKaT_S-8n8a0v7YHvSLHJIrA/exec';
 
 // User database (will be loaded from Google Sheets)
 let registeredUsers = {
@@ -208,25 +208,26 @@ document.getElementById('sessionReportForm').addEventListener('submit', async fu
     submitBtn.disabled = true;
     
     // Collect form data
-    const formData = new FormData(this);
-    const reportData = {
-        timestamp: new Date().toLocaleString('en-US'),
-        instructorName: currentUser.username,
-        instructorSpecialty: currentUser.specialty,
-        sessionDate: formData.get('sessionDate'),
-        sessionTime: formData.get('sessionTime'),
-        duration: formData.get('duration'),
-        sessionTitle: formData.get('sessionTitle'),
-        participantCount: formData.get('participantCount'),
-        sessionType: formData.get('sessionType'),
-        objectives: formData.get('objectives'),
-        content: formData.get('content'),
-        activities: formData.get('activities'),
-        challenges: formData.get('challenges'),
-        feedback: formData.get('feedback'),
-        improvements: formData.get('improvements'),
-        nextSession: formData.get('nextSession')
-    };
+     const formData = new FormData(this);
+            const reportData = {
+                timestamp: new Date().toLocaleString('en-US'),
+                instructorName: currentUser.username,
+                courseName: formData.get('courseName'),
+                sessionDate: formData.get('sessionDate'),
+                sessionTime: formData.get('sessionTime'),
+                sessionNo: formData.get('sessionNo'),
+                duration: formData.get('duration'),
+                participantCount: formData.get('participantCount'),
+                sessionTitle: formData.get('sessionTitle'),
+                sessionType: formData.get('sessionType'),
+                objectives: formData.get('objectives'),
+                content: formData.get('content'),
+                activities: formData.get('activities'),
+                challenges: formData.get('challenges'),
+                feedback: formData.get('feedback'),
+                improvements: formData.get('improvements'),
+                nextSession: formData.get('nextSession')
+            };
     
     try {
         // Try to send data to Google Sheets
