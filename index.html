@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Reports System</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div> -->
+
+    <div class="container">
+        <div class="header">
+            <button class="logout-btn" type="button" onclick="logout()"> Logout</button>
+            <div class="user-info" id="userInfo"></div>
+<br>
+<br>
+            
+            <h1>Session Reports System</h1>
+            <p id="headerSubtitle">Welcome to the Training Session Reports Management System</p>
+        </div>
+
+        <!-- Login page -->
+        <div class="login-container" id="loginPage">
+            <div class="login-form">
+                <!-- Academy Logo for Login Page -->
+                <div class="academy-logo">
+                    <div class="logo-icon"><img src="663.png" alt=""></div>
+                    <div class="academy-name">Tatawar Academy</div>
+                </div>
+                
+                <h2 class="login-title"> Login</h2>
+                
+               
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username"> Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"> Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="login-btn"> Login</button>
+                    <div class="login-error" id="loginError">
+                         Incorrect username or password
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Reports page -->
+        <div class="report-container" id="reportPage">
+            <!-- Display trainer's previous reports -->
+            <div class="reports-history" id="reportsHistory">
+                <h3> Your Previous Reports:</h3>
+                <div id="historyList">
+                    <p class="no-reports-msg">No previous reports</p>
+                </div>
+            </div>
+
+            <form id="sessionReportForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sessionDate">Session Date:</label>
+                        <input type="date" id="sessionDate" name="sessionDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionTime">Session Time:</label>
+                        <input type="time" id="sessionTime" name="sessionTime" required>
+                    </div>
+                </div>
+ <div class="form-group">
+                    <label for="sessionType"> Course Name</label>
+<select id="sessionType" name="sessionType" required>
+    <option value="">Select session type</option>
+    <option value="Scratch">Scratch</option>
+    <option value="Web development">Web development</option>
+    <option value="Mobile Development">Mobile Development</option>
+    <option value="Robotics">Robotics</option>
+    <option value="Unity">Unity</option>
+    <option value="Icdl">Icdl</option>
+    <option value="App Inventor">App Inventor</option>
+    <option value="AI">AI</option>
+</select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="duration">Session Duration (minutes):</label>
+                        <input type="text" id="duration" name="duration" placeholder="Example: 60" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="participantCount"> Number of Participants:</label>
+                        <input type="text" id="participantCount" name="participantCount" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sessionTitle"> Session Title:</label>
+                    <input type="text" id="sessionTitle" name="sessionTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sessionType"> Session Type:</label>
+                    <select id="sessionType" name="sessionType" required>
+                        <option value="">Select session type</option>
+                        <option value="Theoretical">Theoretical</option>
+                        <option value="Practical">Practical</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Review">Review</option>
+                        <option value="Assessment">Assessment</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="objectives"> Session Objectives:</label>
+                    <textarea id="objectives" name="objectives" placeholder="Write the session objectives..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Session Content:</label>
+                    <textarea id="content" name="content" placeholder="Describe the content covered..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="activities"> Activities Performed:</label>
+                    <textarea id="activities" name="activities" placeholder="Mention the activities and exercises..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="challenges"> Challenges and Difficulties:</label>
+                    <textarea id="challenges" name="challenges" placeholder="What challenges did you face?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback"> Participants Feedback:</label>
+                    <textarea id="feedback" name="feedback" placeholder="Participants' comments and feedback..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="improvements"> Improvement Suggestions:</label>
+                    <textarea id="improvements" name="improvements" placeholder="How can the session be improved in the future?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="nextSession"> Next Session Plan:</label>
+                    <textarea id="nextSession" name="nextSession" placeholder="What is your plan for the next session?"></textarea>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Sending report...</p>
+                </div>
+
+                <div class="status-message" id="statusMessage"></div>
+
+                <button type="submit" class="submit-btn"> Submit Report</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Footer
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">🎓</div>
+                <div class="footer-text">
+                </div>
+            </div>
+            
+           
+          
+        </div>  
+          
+    </footer> -->
+    <script src="main.js"></script>
+</body>
+</html>
