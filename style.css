@@ -1,4 +1,5 @@
-      * {
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -109,11 +110,13 @@
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
             border: 3px solid rgba(255, 255, 255, 0.8);
         }
-.logo-icon img{
-    width: 100%;
-    height: 100%;
-    
-}
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+
+        }
+
         .academy-name {
             font-size: 1.8rem;
             font-weight: 700;
@@ -195,7 +198,7 @@
             display: none;
         }
 
-        /* صفحة تسجيل الدخول */
+        /* Login page */
         .login-container {
             padding: 40px;
             text-align: center;
@@ -230,6 +233,7 @@
         input[type="password"],
         input[type="date"], 
         input[type="time"], 
+        input[type="number"],
         select, 
         textarea {
             width: 100%;
@@ -275,80 +279,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .predefined-users {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border: none;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            text-align: right;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .predefined-users h3 {
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
-
-        .user-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-        }
-
-        .user-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .user-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .user-card:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-            border-color: #667eea;
-        }
-
-        .user-card:hover::before {
-            left: 100%;
-        }
-
-        .user-card:hover h4,
-        .user-card:hover p {
-            color: white;
-        }
-
-        .user-card h4 {
-            color: #155724;
-            margin-bottom: 5px;
-        }
-
-        .user-card small {
-            color: #999;
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 5px;
-        }
-
         .login-error {
             background: #f8d7da;
             color: #721c24;
@@ -359,7 +289,7 @@
             display: none;
         }
 
-        /* صفحة التقارير */
+        /* Reports page */
         .report-container {
             padding: 40px;
             display: none;
@@ -374,6 +304,14 @@
         @media (max-width: 768px) {
             .form-row {
                 grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .academy-name {
+                font-size: 1.4rem;
             }
         }
 
@@ -456,116 +394,8 @@
             font-size: 0.8rem;
         }
 
-        /* Footer Styles */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 15px 0;
+        .no-reports-msg {
             text-align: center;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-logo-icon {
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(135deg, #ffd700, #ffed4a);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #2d3748;
-            margin-right: 10px;
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .footer-links a {
-            color: #ecf0f1;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: #ffd700;
-            transform: translateY(-2px);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 35px;
-            height: 35px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .social-icon:hover {
-            background: rgba(255, 215, 0, 0.3);
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .footer-social {
-                margin-top: 10px;
-            }
-        }
-
-        /* Adjust body padding to account for footer */
-        body {
-            padding-bottom: 80px;
+            color: #666;
+            font-style: italic;
         }
